@@ -2,6 +2,8 @@
 
 A Claude Code mod that shows live status for your session: which model is working, which helper agents are running, and where the tokens go.
 
+![Mission control pane](docs/pane.png)
+
 ## What you get
 
 - **A band above the prompt** with a **◉ Control** button and an animated orbit while work is running.
