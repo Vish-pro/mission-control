@@ -1,0 +1,6 @@
+.claude-plugin/types/
+node_modules/
+settings.json
+settings.local.json
+.env*
+.claude-plugin/types/

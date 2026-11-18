@@ -1,0 +1,7 @@
+{
+  "name": "mission-control",
+  "owner": { "name": "Vish" },
+  "plugins": [
+    { "name": "mission-control", "source": "./", "description": "Live status band and pane for Claude Code: helper agents, tokens by model, hand-offs." }
+  ]
+}

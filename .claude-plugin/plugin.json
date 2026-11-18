@@ -1,0 +1,8 @@
+{
+  "name": "mission-control",
+  "version": "1.0.0",
+  "description": "Live status for Claude Code: an animated band and a pane with running helper agents, tokens by model and hand-offs.",
+  "author": { "name": "Vish" },
+  "license": "MIT",
+  "types": "./types/index.d.ts"
+}
