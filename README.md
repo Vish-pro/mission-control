@@ -2,7 +2,7 @@
 
 A Claude Code mod that shows live status for your session: which model is working, which helper agents are running, and where the tokens go.
 
-![Mission control pane](docs/pane.png)
+<p><img src="docs/pane.png" alt="Mission control pane: now working, agent cards, tokens by model" width="320"> <img src="docs/tokens-handoffs.png" alt="Tokens by model and recent hand-offs" width="320"></p>
 
 ## What you get
 
