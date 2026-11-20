@@ -206,6 +206,17 @@ ${rows}
 </svg>`
 }
 
+// The model as /model shows it (follows a switch at once); the last answered turn is the fallback.
+const nowModel = async ($: any): Promise<string> => {
+  try {
+    const m = await $.session.model()
+    if (m) return short(m)
+  } catch {
+    // fall back below
+  }
+  return read($, current)
+}
+
 export const register: Register = on => {
   on('session.start', async ($, e, next) => {
     for (const [name, description] of [
@@ -300,7 +311,7 @@ export const register: Register = on => {
 
   on('ui.render', { component: 'AbovePrompt' }, async ($, e, next) => {
     await read($, tick)
-    const now = await read($, current)
+    const now = await nowModel($)
     const rows = await rowsOf($)
     const run = rows.filter(a => bucket(a.status) === 'running')
     if (e.props.hasSurvey || (!now && run.length === 0)) return next(e)
@@ -350,7 +361,7 @@ export const register: Register = on => {
     const { Box, Text } = ui
     const stats = await read($, models)
     const hops = await read($, handoffs)
-    const now = await read($, current)
+    const now = await nowModel($)
     const rows = await rowsOf($)
     const at = Date.now()
     const run = rows.filter(a => bucket(a.status) === 'running').sort((a, b) => a.start - b.start)
